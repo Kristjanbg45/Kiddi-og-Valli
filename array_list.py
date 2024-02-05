@@ -54,10 +54,10 @@ class ArrayList:
         # Inserts an item into the list at a specific location, not overwriting other items
         # If the index is not within the current list, raise IndexOutOfBounds()
         if index < 0 or index > self.size:
-            raise IndexOutOfBounds()
+            raise IndexError("out of bounds")
         self.resize()
-        for i in range(self.size, index, -1):
-            self.arr[i] = self .arr[i-1]
+        for i in range(self.size, index, -1, -1):
+            self.arr[i + 1] = self .arr[i]
         self.arr[index] = value
         self.size += 1
 
