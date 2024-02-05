@@ -1,4 +1,5 @@
 class IndexOutOfBounds(Exception):
+    print("bad luck i guess")
     pass
 
 class NotFound(Exception):
@@ -15,7 +16,7 @@ class ArrayList:
         # TODO: remove 'pass' and implement functionality
         self.capacity = 4
         self.arr = [None] * self.capacity
-        self.size = 0
+        self.size = 4
         
 
     #Time complexity: O(n) - linear time in size of list
@@ -42,19 +43,33 @@ class ArrayList:
         self.arr[0] = value
         self.size += 1
 
-    #Time complexity: O(n) - linear time in size of list
+    # #Time complexity: O(n) - linear time in size of list
+    # def insert(self, value, index):
+    #     # Inserts an item into the list at a specific location, not overwriting other items
+    #     # ○ If the index is not within the current list, raise IndexOutOfBounds()
+    #     # ○ It should be possible to add to the front and back of the list, and anywhere in between
+    #     # TODO: remove 'pass' and implement functionality
+    #     value = 0
+    #     index = 0
+    #     if index < 0 or index > self.size:
+    #         raise IndexOutOfBounds()
+    #     self.resize()
+    #     for i in range(self.size, index, -1):
+    #         self.arr[i] = self.arr[i-1]
+
+
     def insert(self, value, index):
         # Inserts an item into the list at a specific location, not overwriting other items
-        # ○ If the index is not within the current list, raise IndexOutOfBounds()
-        # ○ It should be possible to add to the front and back of the list, and anywhere in between
-        # TODO: remove 'pass' and implement functionality
+        # If the index is not within the current list, raise IndexOutOfBounds()
         if index < 0 or index > self.size:
             raise IndexOutOfBounds()
-        if self.size == self.capacity:
-            self.resize()
+        self.resize()
         for i in range(self.size, index, -1):
-            self.arr[i] = self.arr[i-1]
+            self.arr[i] = self .arr[i-1]
         self.arr[index] = value
+        self.size += 1
+
+
 
     #Time complexity: O(1) - constant time
     def append(self, value):
@@ -67,26 +82,35 @@ class ArrayList:
         # 
         # TODO: remove 'pass' and implement functionality
         pass
+    #valli
 
     #Time complexity: O(1) - constant time
     def set_at(self, value, index):
         # TODO: remove 'pass' and implement functionality
         pass
+    #valli
 
     #Time complexity: O(1) - constant time
     def get_first(self):
         # TODO: remove 'pass' and implement functionality
-        pass
+        #get the first index of the array
+        for x in self.arr:
+            print(x)
+
+    
+
 
     #Time complexity: O(1) - constant time
     def get_at(self, index):
         # TODO: remove 'pass' and implement functionality
         pass
+    #kiddi
 
     #Time complexity: O(1) - constant time
     def get_last(self):
         # TODO: remove 'pass' and implement functionality
         pass
+    #valli
         
     #Time complexity: O(n) - linear time in size of list
     def resize(self):
@@ -94,6 +118,7 @@ class ArrayList:
             self.capacity = self.capacity * 2
 
         return self.capacity
+    #kiddi
      
 
     #Time complexity: O(n) - linear time in size of list
@@ -108,7 +133,7 @@ class ArrayList:
             for i in range(index, self.size - 1):
                 self.arr[i] = self.arr[i+1]
             self.size -= 1
-
+    #kiddi
 
 
 
@@ -116,32 +141,95 @@ class ArrayList:
         # TODO: remove 'pass' and implement functionality
         pass
 
+    #valli
+
     #Time complexity: O(n) - linear time in size of list
     def insert_ordered(self, value):
         # TODO: remove 'pass' and implement functionality
         pass
+
+    #kiddi
 
     #Time complexity: O(n) - linear time in size of list
     #Time complexity: O(log n) - logarithmic time in size of list
     def find(self, value):
         # TODO: remove 'pass' and implement functionality
         pass
+    
+    #valli
 
     #Time complexity: O(n) - linear time in size of list
     def remove_value(self, value):
         # TODO: remove 'pass' and implement functionality
         pass
 
+    #kiddi
+
 
 if __name__ == "__main__":
-    pass
+    #Kristján Tests.
+
+    my_list = ArrayList()
+    my_list.insert(2,2)
+    print(my_list)
+
+    my_list2 = ArrayList()
+    my_list2.prepend(2)
+    print(my_list2)
+
+    my_list3 = ArrayList()
+    my_list3.append(2)
+    print(my_list3)
+
+    my_list4 = ArrayList()
+    my_list4.remove_at(2)
+    print(my_list4)
+    print("hi")
+
+    my_list5 = ArrayList()
+    my_list5.insert_ordered(2)
+    print(my_list5)
+
+    my_list6 = ArrayList()
+    my_list6.find(2)
+    print(my_list6)
+
+    my_list7 = ArrayList()
+    my_list7.remove_value(2)
+    print(my_list7)
+
+    my_list8 = ArrayList()
+    my_list8.clear()
+    print(my_list8)
+
+    my_list9 = ArrayList()
+    my_list9.get_last()
+    print(my_list9)
+
+    my_list10 = ArrayList()
+    my_list10.get_at(2)
+    print(my_list10)
+
+    my_list11 = ArrayList()
+    my_list11.get_first()
+    print(my_list11)
+
+    my_list12 = ArrayList()
+    my_list12.set_at(2,2)
+    print(my_list12)
+
+
+
+
     # add your tests here or in a different file.
     # Do not add them outside this if statement
     # and make sure they are at this indent level
 
+
+
     #here im testing the insert function and printing the outcome
     print("Testing insert function")
-    print(ArrayList.insert(2, 2, 2))
+    print(my_list.insert(2, 2))
 
 
     arr_lis = ArrayList()
