@@ -1,5 +1,4 @@
 class IndexOutOfBounds(Exception):
-    print("bad luck i guess")
     pass
 
 class NotFound(Exception):
@@ -38,7 +37,9 @@ class ArrayList:
         # Inserts an item into the list before the first item
         # TODO: remove 'pass' and implement functionality
         self.resize()
-        for i in range(self.size, 0, -1):
+        for i in range(self.size):
+            if self.size == 0:
+                self.arr[0] = value
             self.arr[i] = self.arr[i-1]
         self.arr[0] = value
         self.size += 1
@@ -49,15 +50,6 @@ class ArrayList:
     #     # ○ If the index is not within the current list, raise IndexOutOfBounds()
     #     # ○ It should be possible to add to the front and back of the list, and anywhere in between
     #     # TODO: remove 'pass' and implement functionality
-    #     value = 0
-    #     index = 0
-    #     if index < 0 or index > self.size:
-    #         raise IndexOutOfBounds()
-    #     self.resize()
-    #     for i in range(self.size, index, -1):
-    #         self.arr[i] = self.arr[i-1]
-
-
     def insert(self, value, index):
         # Inserts an item into the list at a specific location, not overwriting other items
         # If the index is not within the current list, raise IndexOutOfBounds()
