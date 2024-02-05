@@ -29,8 +29,6 @@ class ArrayList:
             return_string += str(self.arr[i])
         return return_string
     
-#ffjjfjfjfjf
-    
 
     #Time complexity: O(n) - linear time in size of list
     def prepend(self, value):
@@ -62,7 +60,6 @@ class ArrayList:
         self.size += 1
 
 
-
     #Time complexity: O(1) - constant time
     def append(self, value):
         """ Inserts an item at the end of the list """
@@ -78,8 +75,6 @@ class ArrayList:
         self.arr[self.size] = value
         self.size += 1 
         
-       
-    #valli
 
     #Time complexity: O(1) - constant time
     def set_at(self, value, index):
@@ -88,9 +83,6 @@ class ArrayList:
             raise IndexOutOfBounds()
         self.arr[index] = value
 
-        
-        pass
-    #valli
 
     #Time complexity: O(1) - constant time
     def get_first(self):
@@ -103,8 +95,6 @@ class ArrayList:
         if self.size == 0:
             raise Empty()
         return self.arr[0]
-
-    
 
 
     #Time complexity: O(1) - constant time
@@ -121,16 +111,12 @@ class ArrayList:
         else:
             return self.arr[-1]
         
-        
-    #valli
-        
     #Time complexity: O(n) - linear time in size of list
     def resize(self):
         if self.size >= self.capacity:
             self.capacity = self.capacity * 2
 
         return self.capacity
-    #kiddi
      
 
     #Time complexity: O(n) - linear time in size of list
@@ -153,7 +139,7 @@ class ArrayList:
         # TODO: remove 'pass' and implement functionality
         empty_list = []
         self.arr = empty_list
-        
+
 
     #valli
 
