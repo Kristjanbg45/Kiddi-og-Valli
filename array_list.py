@@ -100,8 +100,9 @@ class ArrayList:
     #Time complexity: O(1) - constant time
     def get_at(self, index):
         # TODO: remove 'pass' and implement functionality
-        pass
-    #kiddi
+        if index > self.size:
+            raise IndexOutOfBounds()
+        return self.arr[index] 
 
     #Time complexity: O(1) - constant time
     def get_last(self):
@@ -122,16 +123,19 @@ class ArrayList:
     #Time complexity: O(n) - linear time in size of list
     def remove_at(self, index):
         #  TODO: remove 'pass' and implement functionality
-    #Time complexity: O(1) - constant time
-        if index < 0 or index >= self.size:
-            raise IndexOutOfBounds()
-        elif index == self.size - 1:
-            self.size -= 1
-        else:
-            for i in range(index, self.size - 1):
-                self.arr[i] = self.arr[i+1]
-            self.size -= 1
-    #kiddi
+        #Time complexity: O(1) - constant time
+        # ○ Removes from the list an item at a specific location
+        # ○ If the index is not within the current list, raise IndexOutOfBounds()
+        
+        if index < 0 or index > self.size:
+            raise IndexError("out of bounds")
+        self.resize()
+        for i in range(self.size, index -1, 1):
+            self.arr[i-1] = self.arr[i]
+            
+            
+        self.arr[self.size-1] = None
+        self.size -= 1
 
 
 
