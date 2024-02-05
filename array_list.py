@@ -146,7 +146,8 @@ class ArrayList:
 
     def clear(self):
         # TODO: remove 'pass' and implement functionality
-        self.arr.clear()
+        empty_list = []
+        self.arr = empty_list
         
 
     #valli
