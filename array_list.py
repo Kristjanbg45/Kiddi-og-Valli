@@ -16,7 +16,7 @@ class ArrayList:
         # TODO: remove 'pass' and implement functionality
         self.capacity = 4
         self.arr = [None] * self.capacity
-        self.size = 4
+        self.size = 0
         
 
     #Time complexity: O(n) - linear time in size of list
