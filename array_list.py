@@ -81,7 +81,12 @@ class ArrayList:
         # ■ If the index is not within the current list, raise IndexOutOfBounds()
         # 
         # TODO: remove 'pass' and implement functionality
-        pass
+        if(self.size >= self.capacity):
+            return None
+        self.arr[self.size] = value
+        self.size += 1 
+        
+       
     #valli
 
     #Time complexity: O(1) - constant time
@@ -154,7 +159,7 @@ class ArrayList:
     #Time complexity: O(log n) - logarithmic time in size of list
     def find(self, value):
         # TODO: remove 'pass' and implement functionality
-        pass
+        raise NotFound()
     
     #valli
 
@@ -173,50 +178,50 @@ if __name__ == "__main__":
     my_list.insert(2,2)
     print(my_list)
 
-    my_list2 = ArrayList()
-    my_list2.prepend(2)
-    print(my_list2)
+    # my_list2 = ArrayList()
+    # my_list2.prepend(2)
+    # print(my_list2)
 
-    my_list3 = ArrayList()
-    my_list3.append(2)
-    print(my_list3)
+    # my_list3 = ArrayList()
+    # my_list3.append(2)
+    # print(my_list3)
 
-    my_list4 = ArrayList()
-    my_list4.remove_at(2)
-    print(my_list4)
-    print("hi")
+    # my_list4 = ArrayList()
+    # my_list4.remove_at(2)
+    # print(my_list4)
+    # print("hi")
 
-    my_list5 = ArrayList()
-    my_list5.insert_ordered(2)
-    print(my_list5)
+    # my_list5 = ArrayList()
+    # my_list5.insert_ordered(2)
+    # print(my_list5)
 
-    my_list6 = ArrayList()
-    my_list6.find(2)
-    print(my_list6)
+    # my_list6 = ArrayList()
+    # my_list6.find(2)
+    # print(my_list6)
 
-    my_list7 = ArrayList()
-    my_list7.remove_value(2)
-    print(my_list7)
+    # my_list7 = ArrayList()
+    # my_list7.remove_value(2)
+    # print(my_list7)
 
-    my_list8 = ArrayList()
-    my_list8.clear()
-    print(my_list8)
+    # my_list8 = ArrayList()
+    # my_list8.clear()
+    # print(my_list8)
 
-    my_list9 = ArrayList()
-    my_list9.get_last()
-    print(my_list9)
+    # my_list9 = ArrayList()
+    # my_list9.get_last()
+    # print(my_list9)
 
-    my_list10 = ArrayList()
-    my_list10.get_at(2)
-    print(my_list10)
+    # my_list10 = ArrayList()
+    # my_list10.get_at(2)
+    # print(my_list10)
 
-    my_list11 = ArrayList()
-    my_list11.get_first()
-    print(my_list11)
+    # my_list11 = ArrayList()
+    # my_list11.get_first()
+    # print(my_list11)
 
-    my_list12 = ArrayList()
-    my_list12.set_at(2,2)
-    print(my_list12)
+    # my_list12 = ArrayList()
+    # my_list12.set_at(2,2)
+    # print(my_list12)
 
 
 
