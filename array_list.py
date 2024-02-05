@@ -187,8 +187,36 @@ class ArrayList:
     #Time complexity: O(log n) - logarithmic time in size of list
     def find(self, value):
         # TODO: remove 'pass' and implement functionality
+        if self.size == 0:
+            raise Empty()
+        for i in range(1, len(self.arr)):
+            if self.arr[i - 1] > self.arr[i]:
+                return self.linear_search(value)
+        return self.recursive_binary_search(value, 0, self.size - 1)
+        
+
         raise NotFound()
+
+    def recursive_binary_search(self, value, low, high):
+        if low > high:
+            raise NotFound()
+        
+        mid = (low + high) // 2
+
+        if self.arr[mid] == value:
+            return mid  
+        elif self.arr[mid] > value:
+            return self.recursive_binary_search(value, low, mid - 1)
+        else:
+            return self.recursive_binary_search(value, mid + 1, high)
     
+    def linear_search(self, value):
+        for i in range(len(self.arr)):
+            if self.arr[i] == value:
+                return i  
+        return -1  
+            
+        
     #valli
 
     #Time complexity: O(n) - linear time in size of list
@@ -272,7 +300,7 @@ if __name__ == "__main__":
     # arr_list.remove_value(3)
     # print(arr_list.arr)
 
-
+  
 
 
     # add your tests here or in a different file.
@@ -282,8 +310,12 @@ if __name__ == "__main__":
 
 
     #here im testing the insert function and printing the outcome
+<<<<<<< Updated upstream
     # print("Testing insert function")
     # print(my_list12.insert(2, 0))
+=======
+  
+>>>>>>> Stashed changes
 
 
     arr_lis = ArrayList()
