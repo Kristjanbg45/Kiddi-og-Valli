@@ -84,6 +84,11 @@ class ArrayList:
     #Time complexity: O(1) - constant time
     def set_at(self, value, index):
         # TODO: remove 'pass' and implement functionality
+        if index > self.size:
+            raise IndexOutOfBounds()
+        self.arr[index] = value
+
+        
         pass
     #valli
 
@@ -106,7 +111,12 @@ class ArrayList:
     #Time complexity: O(1) - constant time
     def get_last(self):
         # TODO: remove 'pass' and implement functionality
-        pass
+        if self.size == 0:
+            raise Empty()
+        else:
+            return self.arr[-1]
+        
+        
     #valli
         
     #Time complexity: O(n) - linear time in size of list
@@ -136,7 +146,8 @@ class ArrayList:
 
     def clear(self):
         # TODO: remove 'pass' and implement functionality
-        pass
+        self.arr.clear()
+        
 
     #valli
 
@@ -166,16 +177,16 @@ class ArrayList:
 if __name__ == "__main__":
     #Kristján Tests.
 
-    my_list = ArrayList()
-    my_list.insert(2,2)
-    print(my_list)
+    # my_list = ArrayList()
+    # my_list.insert(2,2)
+    # print(my_list)
 
     # my_list2 = ArrayList()
     # my_list2.prepend(2)
     # print(my_list2)
 
     # my_list3 = ArrayList()
-    # my_list3.append(2)
+    # my_list3.append(1000)
     # print(my_list3)
 
     # my_list4 = ArrayList()
@@ -211,9 +222,9 @@ if __name__ == "__main__":
     # my_list11.get_first()
     # print(my_list11)
 
-    # my_list12 = ArrayList()
-    # my_list12.set_at(2,2)
-    # print(my_list12)
+    my_list12 = ArrayList()
+    my_list12.set_at(2,0)
+    print(my_list12)
 
 
 
@@ -226,7 +237,7 @@ if __name__ == "__main__":
 
     #here im testing the insert function and printing the outcome
     print("Testing insert function")
-    print(my_list.insert(2, 2))
+    print(my_list12.insert(2, 0))
 
 
     arr_lis = ArrayList()
