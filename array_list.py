@@ -96,8 +96,13 @@ class ArrayList:
     def get_first(self):
         # TODO: remove 'pass' and implement functionality
         #get the first index of the array
-        for x in self.arr:
-            print(x)
+        # get_first(self)
+        # ○ Returns the first value in the list
+        # ○ If there are no items in the list, raise Empty()
+
+        if self.size == 0:
+            raise Empty()
+        return self.arr[0]
 
     
 
