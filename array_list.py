@@ -195,7 +195,6 @@ class ArrayList:
         return self.recursive_binary_search(value, 0, self.size - 1)
         
 
-        raise NotFound()
 
     def recursive_binary_search(self, value, low, high):
         if low > high:
@@ -338,81 +337,97 @@ if __name__ == "__main__":
 
 
 
-# def modulus(a, b):  # ONLY NEEDS TO WORK FOR POSITIVE INTEGERS
-#     #TODO: remove 'pass' and implement functionality
-#     pass
+def modulus(a, b):  # ONLY NEEDS TO WORK FOR POSITIVE INTEGERS
+    #TODO: remove 'pass' and implement functionality
+    pass
 
 
-# def how_many(lis1, lis2):
-#     #TODO: remove 'pass' and implement functionality
-#     pass
+def how_many(lis1, lis2):
+    #TODO: remove 'pass' and implement functionality
+    pass
 
 
-# # FEEL FREE TO EDIT THE TESTS AND MAKE THEM BETTER
-# # REMEMBER EDGE CASES!
+# FEEL FREE TO EDIT THE TESTS AND MAKE THEM BETTER
+# REMEMBER EDGE CASES!
 
-# def test_modulus(num1, num2):
-#     print("The modulus of " + str(num1) + " and " + str(num2) + " is " + str(modulus(num1, num2)))
+def test_modulus(num1, num2):
+    print("The modulus of " + str(num1) + " and " + str(num2) + " is " + str(modulus(num1, num2)))
 
-# def test_how_many(lis1, lis2):
-#     print(str(how_many(lis1, lis2)) + " of the items in " + str(lis1) + " are also in " + str(lis2))
+def test_how_many(lis1, lis2):
+    if not lis1 or not lis2:
+        return 0
+    
+    a = 0
+    if lis1[0] in lis2:
+        a += 1
 
-# def run_recursion_program():
+    rest = how_many(lis1[1:], lis2)
+    a += rest
 
-#     print("\nTESTING MODULUS:\n")
+    return a
 
-#     test_modulus(8, 3)
-#     test_modulus(9, 3)
-#     test_modulus(10, 3)
-#     test_modulus(11, 3)
-#     test_modulus(8, 2)
-#     test_modulus(0, 7)
-#     test_modulus(15, 5)
-#     test_modulus(128, 16)
-#     test_modulus(128, 15)
+# a = how_many(['a', 'f', 'd', 't'], ['a', 'b', 'c', 'd', 'e'])
+# print(a)  
 
-#     print("\nTESTING HOW MANY:\n")
+# a = how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
+# print(a) 
 
-#     test_how_many(['a', 'f', 'd', 't'], ['a', 'b', 'c', 'd', 'e'])
-#     test_how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
-#     test_how_many(['f', 'g', 't'], ['a', 'b', 'c', 'd', 'e'])
+def run_recursion_program():
+
+    print("\nTESTING MODULUS:\n")
+
+    test_modulus(8, 3)
+    test_modulus(9, 3)
+    test_modulus(10, 3)
+    test_modulus(11, 3)
+    test_modulus(8, 2)
+    test_modulus(0, 7)
+    test_modulus(15, 5)
+    test_modulus(128, 16)
+    test_modulus(128, 15)
+
+    print("\nTESTING HOW MANY:\n")
+
+    test_how_many(['a', 'f', 'd', 't'], ['a', 'b', 'c', 'd', 'e'])
+    test_how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
+    test_how_many(['f', 'g', 't'], ['a', 'b', 'c', 'd', 'e'])
 
 
-# if __name__ == "__main__":
-#     run_recursion_program()
+if __name__ == "__main__":
+    run_recursion_program()
 
-# # TESTING MODULUS:
+# TESTING MODULUS:
 
-# # The modulus of 8 and 3 is 2
-# # The modulus of 9 and 3 is 0
-# # The modulus of 10 and 3 is 1
-# # The modulus of 11 and 3 is 2
-# # The modulus of 8 and 2 is 0
-# # The modulus of 0 and 7 is 0
-# # The modulus of 15 and 5 is 0
-# # The modulus of 128 and 16 is 0
-# # The modulus of 128 and 15 is 8
+# The modulus of 8 and 3 is 2
+# The modulus of 9 and 3 is 0
+# The modulus of 10 and 3 is 1
+# The modulus of 11 and 3 is 2
+# The modulus of 8 and 2 is 0
+# The modulus of 0 and 7 is 0
+# The modulus of 15 and 5 is 0
+# The modulus of 128 and 16 is 0
+# The modulus of 128 and 15 is 8
 
-# # TESTING HOW MANY:
+# TESTING HOW MANY:
 
-# # 2 of the items in ['a', 'f', 'd', 't'] are also in ['a', 'b', 'c', 'd', 'e']
-# # 4 of the items in ['a', 'b', 'f', 'g', 'a', 't', 'c'] are also in ['a', 'b', 'c', 'd', 'e']
-# # 0 of the items in ['f', 'g', 't'] are also in ['a', 'b', 'c', 'd', 'e']
+# 2 of the items in ['a', 'f', 'd', 't'] are also in ['a', 'b', 'c', 'd', 'e']
+# 4 of the items in ['a', 'b', 'f', 'g', 'a', 't', 'c'] are also in ['a', 'b', 'c', 'd', 'e']
+# 0 of the items in ['f', 'g', 't'] are also in ['a', 'b', 'c', 'd', 'e']
     
 
 
     
-# f1 = open("out.txt")
-# f2 = open("expected_out.txt")
-# f3 = open("out_diff.txt", "w+")
+f1 = open("out.txt")
+f2 = open("expected_out.txt")
+f3 = open("out_diff.txt", "w+")
 
-# line_number = 1
-# for line1, line2 in zip(f1, f2):
-#     if line1.strip() != line2.strip():
-#         print("Difference in line " + str(line_number))
-#         f3.write("Difference in line " + str(line_number) + "\n")
-#     line_number += 1
+line_number = 1
+for line1, line2 in zip(f1, f2):
+    if line1.strip() != line2.strip():
+        print("Difference in line " + str(line_number))
+        f3.write("Difference in line " + str(line_number) + "\n")
+    line_number += 1
 
-# f1.close()
-# f2.close()
-# f3.close()
+f1.close()
+f2.close()
+f3.close()
