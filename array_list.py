@@ -1,3 +1,6 @@
+#hello this code is CopyRwighted by Kristján and Valli if you are not one of the authors please do not copy or use this code without permission from the authors.
+
+
 class IndexOutOfBounds(Exception):
     pass
 
@@ -144,7 +147,7 @@ class ArrayList:
         self.size -= 1
 
 
-
+    #Time complexity: O(1) - constant time
     def clear(self):
         # TODO: remove 'pass' and implement functionality
         empty_list = []
@@ -156,25 +159,25 @@ class ArrayList:
     #Time complexity: O(n) - linear time in size of list
     def insert_ordered(self, value):
         # TODO: remove 'pass' and implement functionality
+        # ○ Insert a value so that the list retains ordering
+        # ○ If the ArrayList instance is not in an ordered state, raise NotOrdered()
+        
         self.resize()
         if self.size == 0:
             self.arr[0] = value
             self.size += 1
         else:
-            index_to_insert = 0
-            for i in range(self.size):
-                if value < self.arr[i]:
-                    # Shift elements to make space for the new value
-                    for j in range(self.size, i, -1):
-                        self.arr[j] = self.arr[j - 1]
-                    # Insert the value at the correct position
-                    self.arr[i] = value
+            index_ins = 0
+            for x in range(self.size):
+                if value < self.arr[x]:
+                    for y in range(self.size, x, -1):
+                        self.arr[y] = self.arr[y - 1]
+                    self.arr[x] = value
                     self.size += 1
                     break
-                index_to_insert = i + 1
+                index_ins = x + 1
             else:
-                # If the value is greater than or equal to all existing elements, insert at the end
-                self.arr[index_to_insert] = value
+                self.arr[index_ins] = value
                 self.size += 1
 
 
@@ -191,9 +194,20 @@ class ArrayList:
     #Time complexity: O(n) - linear time in size of list
     def remove_value(self, value):
         # TODO: remove 'pass' and implement functionality
-        pass
+        found_val = False
+        for i in range(self.size):
+            if self.arr[i] == value:
+                found_val = True
+                break
 
-    #kiddi
+        if not found_val:
+            raise NotFound("Value not found")
+
+        for x in range(i, self.size - 1):
+            self.arr[x] = self.arr[x + 1]
+
+        self.arr[self.size - 1] = None
+        self.size -= 1
 
 
 if __name__ == "__main__":
@@ -244,20 +258,19 @@ if __name__ == "__main__":
     # my_list11.get_first()
     # print(my_list11)
 
-    my_list12 = ArrayList()
-    my_list12.set_at(2,0)
-    print(my_list12)
+    # my_list12 = ArrayList()
+    # my_list12.set_at(2,0)
+    # print(my_list12)
+    # arr_list = ArrayList()
+    # arr_list.insert_ordered(3)
+    # arr_list.insert_ordered(1)
+    # arr_list.insert_ordered(2)
+    # arr_list.insert_ordered(5)
+    # arr_list.insert_ordered(4)
+    # print(arr_list.arr)
 
-    # Example usage
-    arr_list = ArrayList()
-    arr_list.insert_ordered(3)
-    arr_list.insert_ordered(1)
-    arr_list.insert_ordered(2)
-    arr_list.insert_ordered(5)
-    arr_list.insert_ordered(4)
-
-# Print the resulting ArrayList outside of the method
-    print(arr_list.arr)
+    # arr_list.remove_value(3)
+    # print(arr_list.arr)
 
 
 
@@ -274,7 +287,7 @@ if __name__ == "__main__":
 
 
     arr_lis = ArrayList()
-    print(str(arr_lis))
+    # print(str(arr_lis))
 
 
 
