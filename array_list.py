@@ -57,7 +57,7 @@ class ArrayList:
             raise IndexError("out of bounds")
         self.resize()
         for i in range(self.size, index, -1, -1):
-            self.arr[i + 1] = self .arr[i]
+            self.arr[i + 1] = self.arr[i]
         self.arr[index] = value
         self.size += 1
 
