@@ -338,8 +338,13 @@ if __name__ == "__main__":
 
 
 def modulus(a, b):  # ONLY NEEDS TO WORK FOR POSITIVE INTEGERS
-    #TODO: remove 'pass' and implement functionality
-    pass
+     #TODO: remove 'pass' and implement functionality
+    a = int(a)
+    b = int(b)
+    while a >= b:
+        a-=b
+
+    return a
 
 
 def how_many(lis1, lis2):
