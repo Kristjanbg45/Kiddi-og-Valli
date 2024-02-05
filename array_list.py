@@ -310,12 +310,8 @@ if __name__ == "__main__":
 
 
     #here im testing the insert function and printing the outcome
-<<<<<<< Updated upstream
-    # print("Testing insert function")
-    # print(my_list12.insert(2, 0))
-=======
-  
->>>>>>> Stashed changes
+
+
 
 
     arr_lis = ArrayList()
