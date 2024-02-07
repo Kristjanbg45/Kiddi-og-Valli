@@ -216,7 +216,7 @@ class ArrayList:
         return -1  
             
         
-    #valli
+    
 
     #Time complexity: O(n) - linear time in size of list
     def remove_value(self, value):
@@ -347,18 +347,9 @@ def modulus(a, b):  # ONLY NEEDS TO WORK FOR POSITIVE INTEGERS
     return a
 
 
+
+
 def how_many(lis1, lis2):
-    #TODO: remove 'pass' and implement functionality
-    pass
-
-
-# FEEL FREE TO EDIT THE TESTS AND MAKE THEM BETTER
-# REMEMBER EDGE CASES!
-
-def test_modulus(num1, num2):
-    print("The modulus of " + str(num1) + " and " + str(num2) + " is " + str(modulus(num1, num2)))
-
-def test_how_many(lis1, lis2):
     if not lis1 or not lis2:
         return 0
     
