@@ -369,26 +369,38 @@ def how_many(lis1, lis2):
 # print(a) 
 
 
+# FEEL FREE TO EDIT THE TESTS AND MAKE THEM BETTER
+# REMEMBER EDGE CASES!
 
-# TESTING MODULUS:
+def test_modulus(num1, num2):
+    print("The modulus of " + str(num1) + " and " + str(num2) + " is " + str(modulus(num1, num2)))
 
-# The modulus of 8 and 3 is 2
-# The modulus of 9 and 3 is 0
-# The modulus of 10 and 3 is 1
-# The modulus of 11 and 3 is 2
-# The modulus of 8 and 2 is 0
-# The modulus of 0 and 7 is 0
-# The modulus of 15 and 5 is 0
-# The modulus of 128 and 16 is 0
-# The modulus of 128 and 15 is 8
+def test_how_many(lis1, lis2):
+    print(str(how_many(lis1, lis2)) + " of the items in " + str(lis1) + " are also in " + str(lis2))
 
-# TESTING HOW MANY:
+def run_recursion_program():
 
-# 2 of the items in ['a', 'f', 'd', 't'] are also in ['a', 'b', 'c', 'd', 'e']
-# 4 of the items in ['a', 'b', 'f', 'g', 'a', 't', 'c'] are also in ['a', 'b', 'c', 'd', 'e']
-# 0 of the items in ['f', 'g', 't'] are also in ['a', 'b', 'c', 'd', 'e']
-    
+    print("\nTESTING MODULUS:\n")
 
+    test_modulus(8, 3)
+    test_modulus(9, 3)
+    test_modulus(10, 3)
+    test_modulus(11, 3)
+    test_modulus(8, 2)
+    test_modulus(0, 7)
+    test_modulus(15, 5)
+    test_modulus(128, 16)
+    test_modulus(128, 15)
+
+    print("\nTESTING HOW MANY:\n")
+
+    test_how_many(['a', 'f', 'd', 't'], ['a', 'b', 'c', 'd', 'e'])
+    test_how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
+    test_how_many(['f', 'g', 't'], ['a', 'b', 'c', 'd', 'e'])
+
+
+if __name__ == "__main__":
+    run_recursion_program()
 
     
 f1 = open("out.txt")
