@@ -368,29 +368,7 @@ def how_many(lis1, lis2):
 # a = how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
 # print(a) 
 
-def run_recursion_program():
 
-    print("\nTESTING MODULUS:\n")
-
-    test_modulus(8, 3)
-    test_modulus(9, 3)
-    test_modulus(10, 3)
-    test_modulus(11, 3)
-    test_modulus(8, 2)
-    test_modulus(0, 7)
-    test_modulus(15, 5)
-    test_modulus(128, 16)
-    test_modulus(128, 15)
-
-    print("\nTESTING HOW MANY:\n")
-
-    test_how_many(['a', 'f', 'd', 't'], ['a', 'b', 'c', 'd', 'e'])
-    test_how_many(['a', 'b', 'f', 'g', 'a', 't', 'c'], ['a', 'b', 'c', 'd', 'e'])
-    test_how_many(['f', 'g', 't'], ['a', 'b', 'c', 'd', 'e'])
-
-
-if __name__ == "__main__":
-    run_recursion_program()
 
 # TESTING MODULUS:
 
