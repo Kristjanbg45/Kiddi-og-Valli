@@ -11,13 +11,31 @@ def print_to_screen(head):
         print("")
 
 def get_size(head):
-    return 0
+    if head is None:
+        return 0
+    return 1 + get_size(head.next)
 
 def reverse_list(head):
-    return head
+    if head is None or head.next is None:
+        return head
+    new_head = reverse_list(head.next)
+    head.next.next = head
+    head.next = None
+    return new_head
 
 def palindrome(head):
-    return True
+    def _is_palindrome(left, right):
+        if right is None:
+            return True, left
+        is_palindrome, current = _is_palindrome(left, right.next)
+        if not is_palindrome:
+            return False, None
+        if current.data == right.data:
+            return True, current.next
+        return False, None
+
+    is_palindrome, _ = _is_palindrome(head, head)
+    return is_palindrome
 
 if __name__ == "__main__":
     ##
