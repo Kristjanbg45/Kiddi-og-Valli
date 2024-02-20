@@ -1,4 +1,3 @@
-from array_deque import ArrayDeque
 from my_linked_list import LinkedList
 
 class Stack:
@@ -7,7 +6,7 @@ class Stack:
         # Stack must have the container you dont choose for Queue
         
         self.container = LinkedList()
-        #self.container = ArrayDeque()
+
 
     def push(self, data):
         self.container.push_back(data)
