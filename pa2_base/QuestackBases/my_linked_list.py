@@ -20,15 +20,14 @@ class LinkedList():
             self.tail = new_node
         self.size += 1
     
-    def pop_front(self):
-        if not self.head:
+   def pop_front(self):
+        if self.size == 0:
             return None
-        value = self.head.data
-        self.head = self.head.next
-        if not self.head:
-            self.tail = None
+        ret_val = self.arr[0]
+        for i in range(1, self.size):
+            self.arr[i - 1] = self.arr[i]
         self.size -= 1
-        return value
+        return ret_val
     
     def push_back(self, data):
         new_node = Node(data)
