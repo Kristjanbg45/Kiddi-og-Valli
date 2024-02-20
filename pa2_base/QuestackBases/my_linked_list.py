@@ -20,14 +20,15 @@ class LinkedList():
             self.tail = new_node
         self.size += 1
     
-   def pop_front(self):
-        if self.size == 0:
+    def pop_front(self):
+        if not self.head:
             return None
-        ret_val = self.arr[0]
-        for i in range(1, self.size):
-            self.arr[i - 1] = self.arr[i]
+        value = self.head.data
+        self.head = self.head.next
+        if not self.head:
+            self.tail = None
         self.size -= 1
-        return ret_val
+        return value
     
     def push_back(self, data):
         new_node = Node(data)
@@ -67,13 +68,3 @@ class LinkedList():
             current = current.next
         return ' '.join(result)
         
-# # Example usage:
-# linked_list = LinkedList()
-# linked_list.push_back(1)
-# linked_list.push_back(2)
-# linked_list.push_back(3)
-# print(linked_list)  # Output: 1 2 3
-# print(linked_list.pop_front())  # Output: 1
-# print(linked_list.pop_back())  # Output: 3
-# print(linked_list.get_size())  # Output: 1
-# print(linked_list)  # Output: 2
