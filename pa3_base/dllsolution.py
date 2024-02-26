@@ -80,7 +80,7 @@ class DLL:
             if right.data < pivot:
                 left = left.next
                 left.data, right.data = right.data, left.data
-            right = right.next
+            right = right.next 
 
         low.data, left.data = left.data, low.data
         self.current = left

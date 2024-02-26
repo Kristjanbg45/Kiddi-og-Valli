@@ -1,5 +1,5 @@
 import sys
-from dll import DLL
+from dllsolution import DLL
 
 def main():
 
