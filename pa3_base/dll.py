@@ -10,6 +10,7 @@ class DLL:
         self.__head = None
         self.__tail = None
         self.__size = 0
+        self.__current_position = None
 
     def insert(self, key, data):
         """Inserts an item with that value in front of the node at the current position
@@ -80,28 +81,22 @@ class DLL:
 
     def get_value(self):
         """ Returns the value of the item at the current position in the list (None if not item)"""
-        if self.__size == 0:  
-            return None
-        elif not self.__head:  
-            return None
+        if self.__current_position:
+            return self.__current_position.data
         else:
-            return self.__head.data 
+            return None
 
     def move_to_next(self):
         """Moves the current position one item closer to the tail/trailer
                 ■ Do nothing if at end of list"""
-        current_node = self.__head
-        while current_node:  
-            print(current_node.data)
-            current_node = current_node.next
+        if self.__current_position and self.__current_position.next:
+            self.__current_position = self.__current_position.next
 
     def move_to_prev(self):
         """Moves the current position one item closer to the head/header
                 ■ Do nothing if at beginning"""
-        current_node = self.__tail
-        while current_node:
-            print(current_node.data)
-            current_node = current_node.prev
+        if self.__current_position and self.__current_position.prev:
+            self.__current_position = self.__current_position.prev
 
     def move_to_pos(self, pos):
         """Moves the current position to item #position in the list
@@ -115,6 +110,7 @@ class DLL:
             while current_node and index < pos:
                 current_node = current_node.next
                 index += 1
+            self.__current_position = current_node
 
     def clear(self):
         """Clears all nodes from the list"""
@@ -147,7 +143,6 @@ class DLL:
         if self.__size == 0:
             return None
         else:
-            self.__tail.next = None
             return self.__tail
 
     def partition(self, low, high):
