@@ -40,19 +40,18 @@ class DLL:
     def remove(self, data):
         """Removes the node at the current position if there is one (otherwise does nothing)
                 ■ The node behind the removed node is now in the current position"""
-        # when there is no node
         if self.__size == 0 and not self.__head and not self.__tail:  # the code should work without checking for head and tail nodes
             return 
-        # when the list contains 1 node
+        
         elif self.__size == 1:
             self.__head = None
             self.__tail = None
             self.__size -= 1
-        # when the list contains more than one node
+
         elif self.__size > 1:
             current_node = self.__head
             previous_node = None
-            while current_node:  # while the current node is not None
+            while current_node:  
                 if current_node.data == data:
                    
                     if not previous_node:
@@ -74,27 +73,25 @@ class DLL:
                         previous_node.next = next_node
                         next_node.prev = previous_node
                     self.__size -= 1
-                    return   # avoiding an infinite loop
+                    return  
                 else:
-                    # traversing to the next node
-                    # if the data is not matched
                     previous_node = current_node
                     current_node = current_node.next
 
     def get_value(self):
         """ Returns the value of the item at the current position in the list (None if not item)"""
-        if self.__size == 0:  # Check if the list is empty
+        if self.__size == 0:  
             return None
-        elif not self.__head:  # Check if head is None (for robustness)
+        elif not self.__head:  
             return None
         else:
-            return self.__head.data  # Return the data of the node at the head
+            return self.__head.data 
 
     def move_to_next(self):
         """Moves the current position one item closer to the tail/trailer
                 ■ Do nothing if at end of list"""
         current_node = self.__head
-        while current_node:   # while the current node is not None
+        while current_node:  
             print(current_node.data)
             current_node = current_node.next
 
@@ -110,8 +107,8 @@ class DLL:
         """Moves the current position to item #position in the list
                 ■ The first actual data item is #0
                 ■ Do nothing if position not between beginning and end (including both)"""
-        if pos < 0 or pos >= self.__size:  # Check if the position is valid
-            return  # Do nothing if the position is out of bounds
+        if pos < 0 or pos >= self.__size: 
+            return  
         else:
             current_node = self.__head
             index = 0
@@ -123,13 +120,13 @@ class DLL:
         """Clears all nodes from the list"""
         current_node = self.__head
         while current_node:
-            next_node = current_node.next  # Save reference to the next node
-            current_node.prev = None  # Remove reference to previous node
-            current_node.next = None  # Remove reference to next node
-            current_node = next_node  # Move to the next node
-        self.__head = None  # Set head to None
-        self.__tail = None  # Set tail to None
-        self.__size = 0  # Reset size to zero
+            next_node = current_node.next
+            current_node.prev = None  
+            current_node.next = None  
+            current_node = next_node  
+        self.__head = None
+        self.__tail = None  
+        self.__size = 0  
         
 
     def get_first_node(self):
@@ -170,18 +167,13 @@ class DLL:
             that they are on the correct side of the pivot
             After partitioning current position should point towards the pivot
             Partition will only be tested with valid low and high nodes"""
+        
         x = high.data
-          
-        # similar to i = l-1 for array implementation
         z = low.prev
-         
         y = low
          
-        # Similar to "for (int j = l; j <= h- 1; j++)"
         while(y != high):
             if(y.data <= x):
-               
-                # Similar to i++ for array
                 z = low if(z == None) else z.next
  
                 temp = z.data
@@ -189,7 +181,7 @@ class DLL:
                 y.data = temp
             y = y.next
                          
-        z = low if (z == None) else z.next;  # Similar to i++
+        z = low if (z == None) else z.next;  
         temp = z.data
         z.data = high.data
         high.data = temp
@@ -224,5 +216,6 @@ class DLL:
 
 if __name__ == "__main__":
     #create tests here if you want
+    #tests in other files will be used for grading so its better to just make a new test file.
     pass
     
