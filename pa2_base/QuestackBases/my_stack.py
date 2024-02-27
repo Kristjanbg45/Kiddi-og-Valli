@@ -27,3 +27,20 @@ class Stack:
             return str(self.container)
         return ""
 
+
+if __name__ == "__main__":
+    print("STACK TESTS")
+    print("\n")
+    stack = Stack()
+    print(stack)
+    print("size: " + str(stack.get_size()))
+    print(stack.pop())
+    stack.push("A")
+    print(stack)
+    print("size: " + str(stack.get_size()))
+    stack.push("B")
+    print(stack)
+    print("size: " + str(stack.get_size()))
+    stack.push("C")
+    print(stack)
+    print("size: " + str(stack.get_size()))
