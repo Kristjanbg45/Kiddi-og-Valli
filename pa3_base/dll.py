@@ -1,83 +1,172 @@
 
+
 class Node:
-    def __init__(self, data = None, prev = None, next = None):
+    def __init__(self, data=None, prev=None, next=None):
         self.data = data
-        self.prev = None
-        self.next = None
+        self.prev = prev
+        self.next = next
 
 class DLL:
     def __init__(self):
-        self.__head = None
-        self.__tail = None
+        self.__head = Node()
+        self.__tail = Node()
+        self.__head.next = self.__tail
+        self.__tail.prev = self.__head
         self.__size = 0
-        self.__current_position = None
+        self.__current_position = self.__tail
 
-    def insert(self, key, data):
-        """Inserts an item with that value in front of the node at the current position
-                ■ The new node is now in the current position"""
-        if self.__size == 0 and not self.__head and not self.__tail:
-            return
+    def insert(self, data):
+        new_node = Node(data)
+        if not self.__head:  # If the list is empty
+            self.__head = new_node
+            self.__tail = new_node
         else:
-            new_node = Node(data)
-            current_node = self.__head
-            previous_node = None
-            while current_node:
-                if current_node.data == key:
-                    if not previous_node: 
-                        new_node.next = current_node
-                        current_node.prev = new_node
-                        self.__head = new_node 
-                    else:
-                        previous_node.next = new_node
-                        new_node.prev = previous_node
-                        new_node.next = current_node
-                        current_node.prev = new_node
-                    self.__size += 1
-                    return
-                else:
-                    previous_node = current_node
-                    current_node = current_node.next
+            if not self.__current_position:  # If the current position is None, insert at the head
+                new_node.next = self.__head
+                self.__head.prev = new_node
+                self.__head = new_node
+            else:
+                new_node.next = self.__current_position
+                new_node.prev = self.__current_position.prev
+                if self.__current_position.prev:
+                    self.__current_position.prev.next = new_node
+                else:  # If current is the head
+                    self.__head = new_node
+                    self.__current_position.prev = new_node
+        self.__size += 1
+        self.__current_position = new_node
 
-    def remove(self, data):
-        """Removes the node at the current position if there is one (otherwise does nothing)
-                ■ The node behind the removed node is now in the current position"""
-        if self.__size == 0 and not self.__head and not self.__tail:  # the code should work without checking for head and tail nodes
-            return 
+    def remove(self):
+        # if self.__size == 0:  # the code should work without checking for head and tail nodes
+        #     return
+        # current_node = self.__head
+        # while current_node:
+        #     if current_node.data ==:
+        #         if current_node.prev:
+        #             current_node.prev.next = current_node.next
+        #         else:
+        #             self.__head = current_node.next
+        #         if current_node.next:
+        #             current_node.next.prev = current_node.prev
+        #         else:
+        #             self.__tail = current_node.prev
+        #         del current_node
+        #         self.__size -= 1
+        #         return
+        #     current_node = current_node.next
+        pass
+
+    # Other methods remain the same
+
+
+
+# class Node:
+#     def __init__(self, data = None, prev = None, next = None):
+#         self.data = data
+#         self.prev = None
+#         self.next = None
+
+# class DLL:
+#     def __init__(self):
+#         self.__head = None
+#         self.__tail = None
+#         # self.__head.next = self.__tail
+#         # self.__tail.prev = self.__head
+#         self.__size = 0
+#         self.__current_position = None
+
+#     def insert(self, data):
+
+#         """Inserts an item with that value in front of the node at the current position
+#                 ■ The new node is now in the current position"""
+
+#         new_node = Node(data)
+#         if not self.__head:  # If the list is empty
+#             self.__head = new_node
+#             self.__tail = new_node
+#         else:
+#             if not self.__current:  # If the current position is None, insert at the head
+#                 new_node.next = self.__head
+#                 self.__head.prev = new_node
+#                 self.__head = new_node
+#             else:
+#                 new_node.next = self.__current
+#                 new_node.prev = self.__current.prev
+#                 if self.__current.prev:
+#                     self.__current.prev.next = new_node
+#                 else:  # If current is the head
+#                     self.__head = new_node
+#                     self.__current.prev = new_node
+#         self.__size += 1
+#         self.__current = new_node
+
+#         # if self.__size == 0 and not self.__head and not self.__tail:
+#         #     return
+#         # else:
+#         #     new_node = Node(data)
+#         #     current_node = self.__head
+#         #     previous_node = None
+#         #     while current_node:
+#         #         if current_node.data == key:
+#         #             if not previous_node: 
+#         #                 new_node.next = current_node
+#         #                 current_node.prev = new_node
+#         #                 self.__head = new_node 
+#         #             else:
+#         #                 previous_node.next = new_node
+#         #                 new_node.prev = previous_node
+#         #                 new_node.next = current_node
+#         #                 current_node.prev = new_node
+#         #             self.__size += 1
+#         #             return
+#         #         else:
+#         #             previous_node = current_node
+#         #             current_node = current_node.next
+
+#         #             def insert(self, data):
+
+
+
+#     def remove(self, data):
+#         """Removes the node at the current position if there is one (otherwise does nothing)
+#                 ■ The node behind the removed node is now in the current position"""
+#         if self.__size == 0 and not self.__head and not self.__tail:  # the code should work without checking for head and tail nodes
+#             return 
         
-        elif self.__size == 1:
-            self.__head = None
-            self.__tail = None
-            self.__size -= 1
+#         elif self.__size == 1:
+#             self.__head = None
+#             self.__tail = None
+#             self.__size -= 1
 
-        elif self.__size > 1:
-            current_node = self.__head
-            previous_node = None
-            while current_node:  
-                if current_node.data == data:
+#         elif self.__size > 1:
+#             current_node = self.__head
+#             previous_node = None
+#             while current_node:  
+#                 if current_node.data == data:
                    
-                    if not previous_node:
-                        next_node = current_node.next
-                        next_node.prev = None   
-                        current_node.next = None
-                        del current_node
-                        self.__head = next_node
-                    elif not current_node.next:
-                        previous_node.next = None
-                        current_node.prev = None
-                        del current_node
-                        self.__tail = previous_node
-                    else:
-                        next_node = current_node.next
-                        current_node.prev = None
-                        current_node.next = None
-                        del current_node
-                        previous_node.next = next_node
-                        next_node.prev = previous_node
-                    self.__size -= 1
-                    return  
-                else:
-                    previous_node = current_node
-                    current_node = current_node.next
+#                     if not previous_node:
+#                         next_node = current_node.next
+#                         next_node.prev = None   
+#                         current_node.next = None
+#                         del current_node
+#                         self.__head = next_node
+#                     elif not current_node.next:
+#                         previous_node.next = None
+#                         current_node.prev = None
+#                         del current_node
+#                         self.__tail = previous_node
+#                     else:
+#                         next_node = current_node.next
+#                         current_node.prev = None
+#                         current_node.next = None
+#                         del current_node
+#                         previous_node.next = next_node
+#                         next_node.prev = previous_node
+#                     self.__size -= 1
+#                     return  
+#                 else:
+#                     previous_node = current_node
+#                     current_node = current_node.next
 
     def get_value(self):
         """ Returns the value of the item at the current position in the list (None if not item)"""
@@ -163,24 +252,25 @@ class DLL:
             After partitioning current position should point towards the pivot
             Partition will only be tested with valid low and high nodes"""
         
-        x = high.data
-        z = low.prev
-        y = low
+        # x = high.data
+        # z = low.prev
+        # y = low
          
-        while(y != high):
-            if(y.data <= x):
-                z = low if(z == None) else z.next
+        # while(y != high):
+        #     if(y.data <= x):
+        #         z = low if(z == None) else z.next
  
-                temp = z.data
-                z.data = y.data
-                y.data = temp
-            y = y.next
+        #         temp = z.data
+        #         z.data = y.data
+        #         y.data = temp
+        #     y = y.next
                          
-        z = low if (z == None) else z.next;  
-        temp = z.data
-        z.data = high.data
-        high.data = temp
-        return z
+        # z = low if (z == None) else z.next;  
+        # temp = z.data
+        # z.data = high.data
+        # high.data = temp
+        # return z
+        pass
     
 
             
@@ -191,10 +281,11 @@ class DLL:
             After sorting reset the current position to the beginning of the list
             5% Bonus for implementing sort using quicksort
             ■ Partition comes in handy when implementing quicksort"""
-        if(high != None and low != high and low != high.next):
-            temp = self.partition(low, high)
-            self.sort(low,temp.prev)
-            self.sort(temp.next, high)
+        # if(high != None and low != high and low != high.next):
+        #     temp = self.partition(low, high)
+        #     self.sort(low,temp.prev)
+        #     self.sort(temp.next, high)
+        pass
 
     def __len__(self):
         """Returns the number of items in the list"""

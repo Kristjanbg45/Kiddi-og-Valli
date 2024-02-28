@@ -1,0 +1,70 @@
+
+
+TESTING THE BASIC STUFF
+
+None None   -   current value: None   -   size: 0
+None A None   -   current value: A   -   size: 1
+None B A None   -   current value: B   -   size: 2
+None C B A None   -   current value: C   -   size: 3
+None D C B A None   -   current value: D   -   size: 4
+None E D C B A None   -   current value: E   -   size: 5
+None E D C B A None   -   current value: D   -   size: 5
+None E D C B A None   -   current value: C   -   size: 5
+None 1 C B A None   -   current value: 1   -   size: 6
+None 2 1 C B A None   -   current value: 2   -   size: 7
+None 2 1 C B A None   -   current value: 1   -   size: 7
+None 3 1 C B A None   -   current value: 3   -   size: 8
+None 4 3 1 C B A None   -   current value: 4   -   size: 9
+None 4 3 1 C B A None   -   current value: None   -   size: 9
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 4   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 4   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 4   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 4   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: None   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 4   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 3   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 1   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 1   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 1   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: 1   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+VALUE None 4 3 1 C B A None   -   current value: VALUE   -   size: 10
+
+
+TESTING MORE COMPLEX STUFF
+
+None None   -   current value: None   -   size: 0
+None A None   -   current value: A   -   size: 1
+None B1 A None   -   current value: B1   -   size: 2
+None C B1 A None   -   current value: C   -   size: 3
+None A C B1 A None   -   current value: A   -   size: 4
+None B2 A C B1 A None   -   current value: B2   -   size: 5
+None B2 A C B1 A None   -   current value: B2   -   size: 5
+None C B2 A C B1 A None   -   current value: C   -   size: 6
+None A C B2 A C B1 A None   -   current value: A   -   size: 7
+first node:  None
+None A C B2 A C B1 A None   -   current value: A   -   size: 7
+None B3 A C B2 A C B1 A None   -   current value: B3   -   size: 8
+None C B3 A C B2 A C B1 A None   -   current value: C   -   size: 9
+last node:  None
+None C B3 A C B2 A C B1 A None   -   current value: C   -   size: 9
+None C B3 A C B2 A C B1 A None   -   current value: None   -   size: 9
+B5 None C B3 A C B2 A C B1 A None   -   current value: B5   -   size: 10
+B5 None C B3 A C B2 A C B1 A None   -   current value: A   -   size: 10
+B5 None C B3 A C B2 A C B1 A None   -   current value: A   -   size: 10
