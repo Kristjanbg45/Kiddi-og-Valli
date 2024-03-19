@@ -1,0 +1,26 @@
+from array_deque import ArrayDeque
+
+
+class Queue:
+    def __init__(self):
+        # Pick one of these to use.
+        # Stack must have the container you dont choose for Queue
+        
+        
+        self.container = ArrayDeque()
+
+
+    def add(self, data):
+        self.container.push_back(data)
+    
+    def remove(self):
+        return self.container.pop_front()
+
+    def get_size(self):
+        return self.container.get_size()
+
+    def __str__(self):
+        return str(self.container)
+
+
+

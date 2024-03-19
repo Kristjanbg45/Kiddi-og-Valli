@@ -1,0 +1,4 @@
+   -   current value: None   -   size: 0
+move_to_prev
+   -   current value: None   -   size: 0
+remove
