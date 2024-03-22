@@ -1,3 +1,7 @@
+import os
+os.chdir("C:\Users\krist\github\SRAD\Kiddi-og-Valli")
+
+
 class Node:
     def __init__(self, key, value):
         self.key = key
@@ -104,3 +108,6 @@ class ArrayListMap:
     
     def __str__(self):
         return "{" + ", ".join(f"{node.key}: {node.value}" for node in self.arr) + "}"
+
+
+#s.readlines
