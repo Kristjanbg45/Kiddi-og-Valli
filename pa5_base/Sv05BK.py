@@ -77,14 +77,16 @@ class Bucket:
 
 class HashMap:
     def __init__(self, initial_capacity=10):
-        self.buckets = [Bucket() for _ in range(initial_capacity)]
+        self.buckets = []
+        for i in range(initial_capacity):
+            self.buckets.append(Bucket())
         self.size = 0
 
-    def get_bucket_index(self, key):
+    def hash_function(self, key):
         return hash(key) % len(self.buckets)
 
     def insert(self, key, data):
-        index = self.get_bucket_index(key)
+        index = self.hash_function(key)
         try:
             self.buckets[index].insert(key, data)
             self.size += 1
@@ -94,19 +96,19 @@ class HashMap:
             raise ItemExistsException("Key already exists.")
 
     def update(self, key, data):
-        index = self.get_bucket_index(key)
+        index = self.hash_function(key)
         self.buckets[index].update(key, data)
 
     def find(self, key):
-        index = self.get_bucket_index(key)
+        index = self.hash_function(key)
         return self.buckets[index].find(key)
 
     def contains(self, key):
-        index = self.get_bucket_index(key)
+        index = self.hash_function(key)
         return self.buckets[index].contains(key)
 
     def remove(self, key):
-        index = self.get_bucket_index(key)
+        index = self.hash_function(key)
         self.buckets[index].remove(key)
         self.size -= 1
 
@@ -124,7 +126,9 @@ class HashMap:
 
     def rebuild(self):
         old_buckets = self.buckets
-        self.buckets = [Bucket() for _ in range(2 * len(old_buckets))]
+        self.buckets = []
+        for i in range(2 * len(old_buckets)):
+            self.buckets.append(Bucket())
         self.size = 0
         for bucket in old_buckets:
             current = bucket.head
